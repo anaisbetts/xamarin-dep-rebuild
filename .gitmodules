@@ -1,0 +1,9 @@
+[submodule "deps/reactiveui"]
+	path = deps/reactiveui
+	url = https://github.com/reactiveui/ReactiveUI.git
+[submodule "deps/akavache"]
+	path = deps/akavache
+	url = https://github.com/github/Akavache.git
+[submodule "deps/splat"]
+	path = deps/splat
+	url = https://github.com/xpaulbettsx/splat.git
