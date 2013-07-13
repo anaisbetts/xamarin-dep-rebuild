@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+MDTOOL=/Applications/Xamarin\ Studio.app/Contents/MacOS/mdtool
+
+git submodule foreach git clean -xdf
+
+cd deps/splat
+$MDTOOL build -c:Release ./Splat-XamarinStudio.sln
+cd -
+cp -R deps/splat/**/bin/Release/* ./bin
+
+cd deps/reactiveui
+$MDTOOL build -c:Release ./ReactiveUI_XSAll.sln
+cd -
+cp -R deps/reactiveui/**/bin/Release/* bin
+
+ln -s deps/akavache/ext/mono deps/akavache/ext/monomac
+cp -R bin/* deps/akavache/ext
+cd deps/akavache
+$MDTOOL build -c:Release ./Akavache_XSAll.sln
+cd -
+cp -R deps/akavache/**/bin/Release/* bin
+
+cp -R bin/Mono/* bin/MonoMac
+rm -rf bin/Mono
+
+# vim: ts=4 sw=4 tw=120 et syn=sh :
