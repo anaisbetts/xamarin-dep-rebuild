@@ -2,6 +2,7 @@
 
 MDTOOL=/Applications/Xamarin\ Studio.app/Contents/MacOS/mdtool
 
+rm -rf bin/*
 git submodule foreach git clean -xdf
 
 cd deps/splat
@@ -14,8 +15,10 @@ $MDTOOL build -c:Release ./ReactiveUI_XSAll.sln
 cd -
 cp -R deps/reactiveui/**/bin/Release/* bin
 
-ln -s deps/akavache/ext/mono deps/akavache/ext/monomac
-cp -R bin/* deps/akavache/ext
+cp -R bin/MonoMac/* deps/akavache/ext/Mono
+cp -R bin/Monoandroid/* deps/akavache/ext/Monodroid
+cp -R bin/Monotouch/* deps/akavache/ext/Monotouch
+
 cd deps/akavache
 $MDTOOL build -c:Release ./Akavache_XSAll.sln
 cd -
