@@ -19,12 +19,16 @@ cp -R bin/MonoMac/* deps/akavache/ext/Mono
 cp -R bin/Monoandroid/* deps/akavache/ext/Monodroid
 cp -R bin/Monotouch/* deps/akavache/ext/Monotouch
 
+## NB: Because of a Xamarin bug atm, we have to build this 2x
 cd deps/akavache
+$MDTOOL build -c:Release ./Akavache_XSNoMac.sln
 $MDTOOL build -c:Release ./Akavache_XSAll.sln
 cd -
 cp -R deps/akavache/**/bin/Release/* bin
 
 cp -R bin/Mono/* bin/MonoMac
 rm -rf bin/Mono
+
+echo "***** Done! *****"
 
 # vim: ts=4 sw=4 tw=120 et syn=sh :
