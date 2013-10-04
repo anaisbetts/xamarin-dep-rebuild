@@ -7,3 +7,6 @@
 [submodule "deps/splat"]
 	path = deps/splat
 	url = https://github.com/xpaulbettsx/splat.git
+[submodule "deps/modernhttpclient"]
+	path = deps/modernhttpclient
+	url = https://github.com/paulcbetts/ModernHttpClient.git

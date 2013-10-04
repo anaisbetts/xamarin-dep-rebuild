@@ -10,6 +10,12 @@ $MDTOOL build -c:Release ./Splat-XamarinStudio.sln
 cd -
 cp -R deps/splat/**/bin/Release/* ./bin
 
+cd deps/modernhttpclient
+$MDTOOL build -c:Release ./ModernHttpClient.sln
+cd -
+cp -R deps/modernhttpclient/src/ModernHttpClient.Android/bin/Release/* ./bin/Monoandroid
+cp -R deps/modernhttpclient/src/ModernHttpClient.iOS/bin/Release/* ./bin/Monotouch
+
 cd deps/reactiveui
 $MDTOOL build -c:Release ./ReactiveUI_XSAll.sln
 cd -
