@@ -11,7 +11,7 @@ cd -
 cp -R deps/splat/**/bin/Release/* ./bin
 
 cd deps/modernhttpclient
-$MDTOOL build -c:Release ./ModernHttpClient.sln
+make
 cd -
 cp -R deps/modernhttpclient/src/ModernHttpClient.Android/bin/Release/* ./bin/Monoandroid
 cp -R deps/modernhttpclient/src/ModernHttpClient.iOS/bin/Release/* ./bin/Monotouch
