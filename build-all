@@ -27,8 +27,8 @@ cp -R bin/Monotouch/* deps/akavache/ext/Monotouch
 
 ## NB: Because of a Xamarin bug atm, we have to build this 2x
 cd deps/akavache
-$MDTOOL build -c:Release ./Akavache_XSNoMac.sln
 $MDTOOL build -c:Release ./Akavache_XSAll.sln
+$MDTOOL build -c:Release ./Akavache_XSNoMac.sln
 cd -
 cp -R deps/akavache/**/bin/Release/* bin
 
